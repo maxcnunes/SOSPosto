@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SOSPostoModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.1" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="SOSPostoModelStoreContainer">
+    <EntitySet Name="bomba" EntityType="SOSPostoModel.Store.bomba" store:Type="Tables" Schema="sos_posto" />
+    <EntitySet Name="cliente" EntityType="SOSPostoModel.Store.cliente" store:Type="Tables" Schema="sos_posto" />
+    <EntitySet Name="compra" EntityType="SOSPostoModel.Store.compra" store:Type="Tables" Schema="sos_posto" />
+    <EntitySet Name="fornecedor" EntityType="SOSPostoModel.Store.fornecedor" store:Type="Tables" Schema="sos_posto" />
+    <EntitySet Name="itemcompra" EntityType="SOSPostoModel.Store.itemcompra" store:Type="Tables" Schema="sos_posto" />
+    <EntitySet Name="itemvenda" EntityType="SOSPostoModel.Store.itemvenda" store:Type="Tables" Schema="sos_posto" />
+    <EntitySet Name="produto" EntityType="SOSPostoModel.Store.produto" store:Type="Tables" Schema="sos_posto" />
+    <EntitySet Name="tanque" EntityType="SOSPostoModel.Store.tanque" store:Type="Tables" Schema="sos_posto" />
+    <EntitySet Name="usuario" EntityType="SOSPostoModel.Store.usuario" store:Type="Tables" Schema="sos_posto" />
+    <EntitySet Name="venda" EntityType="SOSPostoModel.Store.venda" store:Type="Tables" Schema="sos_posto" />
+    <AssociationSet Name="FK_Bomba10" Association="SOSPostoModel.Store.FK_Bomba10">
+      <End Role="tanque" EntitySet="tanque" />
+      <End Role="bomba" EntitySet="bomba" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Compra15" Association="SOSPostoModel.Store.FK_Compra15">
+      <End Role="fornecedor" EntitySet="fornecedor" />
+      <End Role="compra" EntitySet="compra" />
+    </AssociationSet>
+    <AssociationSet Name="fk_itemCompra_compra1" Association="SOSPostoModel.Store.fk_itemCompra_compra1">
+      <End Role="compra" EntitySet="compra" />
+      <End Role="itemcompra" EntitySet="itemcompra" />
+    </AssociationSet>
+    <AssociationSet Name="fk_itemCompra_produto1" Association="SOSPostoModel.Store.fk_itemCompra_produto1">
+      <End Role="produto" EntitySet="produto" />
+      <End Role="itemcompra" EntitySet="itemcompra" />
+    </AssociationSet>
+    <AssociationSet Name="fk_itemVenda_bomba1" Association="SOSPostoModel.Store.fk_itemVenda_bomba1">
+      <End Role="bomba" EntitySet="bomba" />
+      <End Role="itemvenda" EntitySet="itemvenda" />
+    </AssociationSet>
+    <AssociationSet Name="fk_itemVenda_produto1" Association="SOSPostoModel.Store.fk_itemVenda_produto1">
+      <End Role="produto" EntitySet="produto" />
+      <End Role="itemvenda" EntitySet="itemvenda" />
+    </AssociationSet>
+    <AssociationSet Name="fk_itemVenda_venda" Association="SOSPostoModel.Store.fk_itemVenda_venda">
+      <End Role="venda" EntitySet="venda" />
+      <End Role="itemvenda" EntitySet="itemvenda" />
+    </AssociationSet>
+    <AssociationSet Name="fk_produto_fornecedor1" Association="SOSPostoModel.Store.fk_produto_fornecedor1">
+      <End Role="fornecedor" EntitySet="fornecedor" />
+      <End Role="produto" EntitySet="produto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Venda11" Association="SOSPostoModel.Store.FK_Venda11">
+      <End Role="cliente" EntitySet="cliente" />
+      <End Role="venda" EntitySet="venda" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Venda16" Association="SOSPostoModel.Store.FK_Venda16">
+      <End Role="usuario" EntitySet="usuario" />
+      <End Role="venda" EntitySet="venda" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="bomba">
+    <Key>
+      <PropertyRef Name="Bomba_ID" />
+    </Key>
+    <Property Name="numBomba" Type="int" Nullable="false" />
+    <Property Name="Tanque_ID" Type="int" Nullable="false" />
+    <Property Name="Bomba_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="cliente">
+    <Key>
+      <PropertyRef Name="Cliente_ID" />
+    </Key>
+    <Property Name="cpf" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="endereco" Type="varchar" MaxLength="150" />
+    <Property Name="cep" Type="varchar" MaxLength="9" />
+    <Property Name="cidade" Type="varchar" MaxLength="150" />
+    <Property Name="num" Type="int" />
+    <Property Name="fonecelular" Type="varchar" MaxLength="12" />
+    <Property Name="fonecomercial" Type="varchar" MaxLength="12" />
+    <Property Name="foneresidencial" Type="varchar" MaxLength="12" />
+    <Property Name="nome" Type="varchar" Nullable="false" MaxLength="150" />
+    <Property Name="rg" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="ativo" Type="bit" Nullable="false" />
+    <Property Name="Cliente_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="compra">
+    <Key>
+      <PropertyRef Name="Compra_ID" />
+    </Key>
+    <Property Name="dataEmissao" Type="date" Nullable="false" />
+    <Property Name="dataEntrada" Type="date" Nullable="false" />
+    <Property Name="serie" Type="varchar" Nullable="false" MaxLength="150" />
+    <Property Name="desconto" Type="decimal" Precision="8" Scale="2" />
+    <Property Name="totalValorCompra" Type="decimal" Nullable="false" Precision="8" Scale="2" />
+    <Property Name="Compra_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Fornecedor_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="fornecedor">
+    <Key>
+      <PropertyRef Name="Fornecedor_ID" />
+    </Key>
+    <Property Name="cnpj" Type="varchar" Nullable="false" MaxLength="17" />
+    <Property Name="endereco" Type="varchar" MaxLength="150" />
+    <Property Name="cep" Type="varchar" MaxLength="10" />
+    <Property Name="num" Type="int" />
+    <Property Name="foneCelular" Type="varchar" MaxLength="15" />
+    <Property Name="foneComercial" Type="varchar" MaxLength="15" />
+    <Property Name="foneResidencial" Type="varchar" MaxLength="15" />
+    <Property Name="nome" Type="varchar" Nullable="false" MaxLength="150" />
+    <Property Name="ie" Type="varchar" MaxLength="150" />
+    <Property Name="rg" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="Fornecedor_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="itemcompra">
+    <Key>
+      <PropertyRef Name="ItemCompra_ID" />
+    </Key>
+    <Property Name="ItemCompra_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="preco" Type="decimal" Nullable="false" Precision="8" Scale="2" />
+    <Property Name="quantidade" Type="int" Nullable="false" />
+    <Property Name="Compra_ID" Type="int" Nullable="false" />
+    <Property Name="Produto_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="itemvenda">
+    <Key>
+      <PropertyRef Name="ItemVenda_ID" />
+    </Key>
+    <Property Name="ItemVenda_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="preco" Type="decimal" Nullable="false" Precision="8" Scale="2" />
+    <Property Name="quantidade" Type="int" />
+    <Property Name="Venda_ID" Type="int" Nullable="false" />
+    <Property Name="Produto_ID" Type="int" Nullable="false" />
+    <Property Name="Bomba_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="produto">
+    <Key>
+      <PropertyRef Name="Produto_ID" />
+    </Key>
+    <Property Name="descricao" Type="varchar" Nullable="false" MaxLength="150" />
+    <Property Name="un" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="unSecundaria" Type="varchar" Nullable="false" MaxLength="10" />
+    <Property Name="valor" Type="decimal" Nullable="false" Precision="8" Scale="2" />
+    <Property Name="nome" Type="varchar" Nullable="false" MaxLength="150" />
+    <Property Name="tipo" Type="varchar" Nullable="false" MaxLength="150" />
+    <Property Name="Produto_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Fornecedor_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tanque">
+    <Key>
+      <PropertyRef Name="Tanque_ID" />
+    </Key>
+    <Property Name="descricao" Type="varchar" MaxLength="150" />
+    <Property Name="capacidade" Type="int" Nullable="false" />
+    <Property Name="Tanque_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="usuario">
+    <Key>
+      <PropertyRef Name="Usuario_ID" />
+    </Key>
+    <Property Name="senha" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="usuario" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="Usuario_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="venda">
+    <Key>
+      <PropertyRef Name="Venda_ID" />
+    </Key>
+    <Property Name="dataEmissao" Type="date" Nullable="false" />
+    <Property Name="dataSaida" Type="date" Nullable="false" />
+    <Property Name="serie" Type="varchar" Nullable="false" MaxLength="15" />
+    <Property Name="totalDesconto" Type="decimal" Nullable="false" Precision="8" Scale="2" />
+    <Property Name="Venda_ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Cliente_ID" Type="int" Nullable="false" />
+    <Property Name="Usuário_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Bomba10">
+    <End Role="tanque" Type="SOSPostoModel.Store.tanque" Multiplicity="1" />
+    <End Role="bomba" Type="SOSPostoModel.Store.bomba" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tanque">
+        <PropertyRef Name="Tanque_ID" />
+      </Principal>
+      <Dependent Role="bomba">
+        <PropertyRef Name="Tanque_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Compra15">
+    <End Role="fornecedor" Type="SOSPostoModel.Store.fornecedor" Multiplicity="1" />
+    <End Role="compra" Type="SOSPostoModel.Store.compra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="fornecedor">
+        <PropertyRef Name="Fornecedor_ID" />
+      </Principal>
+      <Dependent Role="compra">
+        <PropertyRef Name="Fornecedor_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_itemCompra_compra1">
+    <End Role="compra" Type="SOSPostoModel.Store.compra" Multiplicity="1" />
+    <End Role="itemcompra" Type="SOSPostoModel.Store.itemcompra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="compra">
+        <PropertyRef Name="Compra_ID" />
+      </Principal>
+      <Dependent Role="itemcompra">
+        <PropertyRef Name="Compra_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_itemCompra_produto1">
+    <End Role="produto" Type="SOSPostoModel.Store.produto" Multiplicity="1" />
+    <End Role="itemcompra" Type="SOSPostoModel.Store.itemcompra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="produto">
+        <PropertyRef Name="Produto_ID" />
+      </Principal>
+      <Dependent Role="itemcompra">
+        <PropertyRef Name="Produto_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_itemVenda_bomba1">
+    <End Role="bomba" Type="SOSPostoModel.Store.bomba" Multiplicity="0..1" />
+    <End Role="itemvenda" Type="SOSPostoModel.Store.itemvenda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bomba">
+        <PropertyRef Name="Bomba_ID" />
+      </Principal>
+      <Dependent Role="itemvenda">
+        <PropertyRef Name="Bomba_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_itemVenda_produto1">
+    <End Role="produto" Type="SOSPostoModel.Store.produto" Multiplicity="1" />
+    <End Role="itemvenda" Type="SOSPostoModel.Store.itemvenda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="produto">
+        <PropertyRef Name="Produto_ID" />
+      </Principal>
+      <Dependent Role="itemvenda">
+        <PropertyRef Name="Produto_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_itemVenda_venda">
+    <End Role="venda" Type="SOSPostoModel.Store.venda" Multiplicity="1" />
+    <End Role="itemvenda" Type="SOSPostoModel.Store.itemvenda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="venda">
+        <PropertyRef Name="Venda_ID" />
+      </Principal>
+      <Dependent Role="itemvenda">
+        <PropertyRef Name="Venda_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_produto_fornecedor1">
+    <End Role="fornecedor" Type="SOSPostoModel.Store.fornecedor" Multiplicity="1" />
+    <End Role="produto" Type="SOSPostoModel.Store.produto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="fornecedor">
+        <PropertyRef Name="Fornecedor_ID" />
+      </Principal>
+      <Dependent Role="produto">
+        <PropertyRef Name="Fornecedor_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Venda11">
+    <End Role="cliente" Type="SOSPostoModel.Store.cliente" Multiplicity="1" />
+    <End Role="venda" Type="SOSPostoModel.Store.venda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="cliente">
+        <PropertyRef Name="Cliente_ID" />
+      </Principal>
+      <Dependent Role="venda">
+        <PropertyRef Name="Cliente_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Venda16">
+    <End Role="usuario" Type="SOSPostoModel.Store.usuario" Multiplicity="1" />
+    <End Role="venda" Type="SOSPostoModel.Store.venda" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="usuario">
+        <PropertyRef Name="Usuario_ID" />
+      </Principal>
+      <Dependent Role="venda">
+        <PropertyRef Name="Usuário_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
