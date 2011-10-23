@@ -7,3 +7,12 @@ C:\Users\Max\Documents\Visual Studio 2010\Projects\SOSPosto\SP.Contract.Service\
 C:\Users\Max\Documents\Visual Studio 2010\Projects\SOSPosto\SP.Contract.Service\bin\Debug\SP.Contract.Data.pdb
 C:\Users\Max\Documents\Visual Studio 2010\Projects\SOSPosto\SP.Contract.Service\bin\Debug\SP.Entities.dll
 C:\Users\Max\Documents\Visual Studio 2010\Projects\SOSPosto\SP.Contract.Service\bin\Debug\SP.Entities.pdb
+C:\Users\Max\RepositorioGIT\SOSPosto\SP.Contract.Service\bin\Debug\SP.Contract.Service.dll
+C:\Users\Max\RepositorioGIT\SOSPosto\SP.Contract.Service\bin\Debug\SP.Contract.Service.pdb
+C:\Users\Max\RepositorioGIT\SOSPosto\SP.Contract.Service\bin\Debug\SP.Contract.Data.dll
+C:\Users\Max\RepositorioGIT\SOSPosto\SP.Contract.Service\bin\Debug\SP.Entities.dll
+C:\Users\Max\RepositorioGIT\SOSPosto\SP.Contract.Service\bin\Debug\SP.Contract.Data.pdb
+C:\Users\Max\RepositorioGIT\SOSPosto\SP.Contract.Service\bin\Debug\SP.Entities.pdb
+C:\Users\Max\RepositorioGIT\SOSPosto\SP.Contract.Service\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Max\RepositorioGIT\SOSPosto\SP.Contract.Service\obj\Debug\SP.Contract.Service.dll
+C:\Users\Max\RepositorioGIT\SOSPosto\SP.Contract.Service\obj\Debug\SP.Contract.Service.pdb

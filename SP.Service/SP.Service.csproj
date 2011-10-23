@@ -31,10 +31,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="ProdutoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\ProdutoServiceHost\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="TanqueService.cs" />
+    <Compile Include="VendaService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SP.Contract.Data.Translator\SP.Contract.Data.SecurityTranslator.csproj">
+      <Project>{A5933ADE-E4BB-4D97-8830-72B49EADEBD3}</Project>
+      <Name>SP.Contract.Data.SecurityTranslator</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SP.Contract.Data\SP.Contract.Data.csproj">
       <Project>{3A47AE29-C726-4DA0-A874-5EBB754B9B43}</Project>
       <Name>SP.Contract.Data</Name>
@@ -54,7 +65,46 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\DataSources\SP.Contract.Data.Produto.datasource" />
+    <None Include="Service References\ProdutoServiceHost\ProdutoService.wsdl" />
+    <None Include="Service References\ProdutoServiceHost\ProdutoService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutoServiceHost\ProdutoService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ProdutoServiceHost\ProdutoService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ProdutoServiceHost\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProdutoServiceHost\ProdutoService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProdutoServiceHost\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProdutoServiceHost\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ProdutoServiceHost\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

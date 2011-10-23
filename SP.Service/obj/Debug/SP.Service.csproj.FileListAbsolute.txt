@@ -3,3 +3,19 @@ C:\Users\Max\Documents\Visual Studio 2010\Projects\SOSPosto\SP.Service\bin\Debug
 C:\Users\Max\Documents\Visual Studio 2010\Projects\SOSPosto\SP.Service\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Max\Documents\Visual Studio 2010\Projects\SOSPosto\SP.Service\obj\Debug\SP.Service.dll
 C:\Users\Max\Documents\Visual Studio 2010\Projects\SOSPosto\SP.Service\obj\Debug\SP.Service.pdb
+C:\Users\Max\RepositorioGIT\SOSPosto\SP.Service\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Max\RepositorioGIT\SOSPosto\SP.Service\obj\Debug\SP.Service.dll
+C:\Users\Max\RepositorioGIT\SOSPosto\SP.Service\bin\Debug\SP.Service.dll
+C:\Users\Max\RepositorioGIT\SOSPosto\SP.Service\bin\Debug\SP.Service.pdb
+C:\Users\Max\RepositorioGIT\SOSPosto\SP.Service\bin\Debug\SP.Contract.Data.dll
+C:\Users\Max\RepositorioGIT\SOSPosto\SP.Service\bin\Debug\SP.Contract.Service.dll
+C:\Users\Max\RepositorioGIT\SOSPosto\SP.Service\bin\Debug\SP.DAL.dll
+C:\Users\Max\RepositorioGIT\SOSPosto\SP.Service\bin\Debug\SP.Entities.dll
+C:\Users\Max\RepositorioGIT\SOSPosto\SP.Service\bin\Debug\SP.Contract.Data.pdb
+C:\Users\Max\RepositorioGIT\SOSPosto\SP.Service\bin\Debug\SP.Contract.Service.pdb
+C:\Users\Max\RepositorioGIT\SOSPosto\SP.Service\bin\Debug\SP.DAL.pdb
+C:\Users\Max\RepositorioGIT\SOSPosto\SP.Service\bin\Debug\SP.Entities.pdb
+C:\Users\Max\RepositorioGIT\SOSPosto\SP.Service\obj\Debug\SP.Service.pdb
+C:\Users\Max\RepositorioGIT\SOSPosto\SP.Service\bin\Debug\SP.Contract.Data.Translator.dll
+C:\Users\Max\RepositorioGIT\SOSPosto\SP.Service\bin\Debug\SP.Contract.Data.Translator.pdb
+C:\Users\Max\RepositorioGIT\SOSPosto\SP.Service\bin\Debug\SP.Service.dll.config

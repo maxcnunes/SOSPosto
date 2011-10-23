@@ -5,7 +5,7 @@ using SP.Entities.Interfaces;
 
 namespace SP.Entities
 {
-    partial class tanque : ITanque
+    partial class tanque : SP.Entities.Interfaces.ITanque
     {
         public IEnumerable<IBomba> bombas
         {

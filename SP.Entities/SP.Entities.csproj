@@ -49,12 +49,9 @@
     <Compile Include="compra.cs">
       <DependentUpon>SOSPostoModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="CustomEntities\tanque.cs" />
     <Compile Include="fornecedor.cs">
       <DependentUpon>SOSPostoModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Interfaces\IBomba.cs" />
-    <Compile Include="Interfaces\ITanque.cs" />
     <Compile Include="itemcompra.cs">
       <DependentUpon>SOSPostoModel.tt</DependentUpon>
     </Compile>

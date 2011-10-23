@@ -7,9 +7,9 @@ namespace SP.Contract.Service
     public interface ITanqueService
     {
         [OperationContract]
-        Tanque InserirTanque(SP.Entities.Interfaces.ITanque _tanque);
+        Tanque Inserir(Tanque _tanque);
 
         [OperationContract]
-        Tanque[] BuscarTodosTanques();
+        Tanque[] BuscarTodos();
     }
 }

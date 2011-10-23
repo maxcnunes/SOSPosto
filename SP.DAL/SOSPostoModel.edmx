@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="SOSPostoModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.1" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="SOSPostoModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.1" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="SOSPostoModelStoreContainer">
           <EntitySet Name="bomba" EntityType="SOSPostoModel.Store.bomba" store:Type="Tables" Schema="sos_posto" />
           <EntitySet Name="cliente" EntityType="SOSPostoModel.Store.cliente" store:Type="Tables" Schema="sos_posto" />
@@ -292,12 +292,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SOSPostoModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
-        <EntityContainer Name="SOSPostoDataContext" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="SOSPostoDataContext" annotation:LazyLoadingEnabled="false">
           <EntitySet Name="bomba" EntityType="SOSPostoModel.bomba" />
           <EntitySet Name="cliente" EntityType="SOSPostoModel.cliente" />
           <EntitySet Name="compra" EntityType="SOSPostoModel.compra" />
@@ -353,9 +352,9 @@
           <Key>
             <PropertyRef Name="Bomba_ID" />
           </Key>
-          <Property Name="numBomba" Type="Int32" Nullable="false" />
-          <Property Name="Tanque_ID" Type="Int32" Nullable="false" />
-          <Property Name="Bomba_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="numBomba" Nullable="false" />
+          <Property Type="Int32" Name="Tanque_ID" Nullable="false" />
+          <Property Type="Int32" Name="Bomba_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="tanque" Relationship="SOSPostoModel.FK_Bomba10" FromRole="bomba" ToRole="tanque" />
           <NavigationProperty Name="itemvenda" Relationship="SOSPostoModel.fk_itemVenda_bomba1" FromRole="bomba" ToRole="itemvenda" />
         </EntityType>
@@ -363,31 +362,31 @@
           <Key>
             <PropertyRef Name="Cliente_ID" />
           </Key>
-          <Property Name="cpf" Type="String" Nullable="false" />
-          <Property Name="endereco" Type="String" />
-          <Property Name="cep" Type="String" />
-          <Property Name="cidade" Type="String" />
-          <Property Name="num" Type="Int32" />
-          <Property Name="fonecelular" Type="String" />
-          <Property Name="fonecomercial" Type="String" />
-          <Property Name="foneresidencial" Type="String" />
-          <Property Name="nome" Type="String" Nullable="false" />
-          <Property Name="rg" Type="String" Nullable="false" />
-          <Property Name="ativo" Type="Boolean" Nullable="false" />
-          <Property Name="Cliente_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="cpf" Nullable="false" />
+          <Property Type="String" Name="endereco" />
+          <Property Type="String" Name="cep" />
+          <Property Type="String" Name="cidade" />
+          <Property Type="Int32" Name="num" />
+          <Property Type="String" Name="fonecelular" />
+          <Property Type="String" Name="fonecomercial" />
+          <Property Type="String" Name="foneresidencial" />
+          <Property Type="String" Name="nome" Nullable="false" />
+          <Property Type="String" Name="rg" Nullable="false" />
+          <Property Type="Boolean" Name="ativo" Nullable="false" />
+          <Property Type="Int32" Name="Cliente_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="venda" Relationship="SOSPostoModel.FK_Venda11" FromRole="cliente" ToRole="venda" />
         </EntityType>
         <EntityType Name="compra">
           <Key>
             <PropertyRef Name="Compra_ID" />
           </Key>
-          <Property Name="dataEmissao" Type="DateTime" Nullable="false" />
-          <Property Name="dataEntrada" Type="DateTime" Nullable="false" />
-          <Property Name="serie" Type="String" Nullable="false" />
-          <Property Name="desconto" Type="Decimal" />
-          <Property Name="totalValorCompra" Type="Decimal" Nullable="false" />
-          <Property Name="Compra_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Fornecedor_ID" Type="Int32" Nullable="false" />
+          <Property Type="DateTime" Name="dataEmissao" Nullable="false" />
+          <Property Type="DateTime" Name="dataEntrada" Nullable="false" />
+          <Property Type="String" Name="serie" Nullable="false" />
+          <Property Type="Decimal" Name="desconto" />
+          <Property Type="Decimal" Name="totalValorCompra" Nullable="false" />
+          <Property Type="Int32" Name="Compra_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Fornecedor_ID" Nullable="false" />
           <NavigationProperty Name="fornecedor" Relationship="SOSPostoModel.FK_Compra15" FromRole="compra" ToRole="fornecedor" />
           <NavigationProperty Name="itemcompra" Relationship="SOSPostoModel.fk_itemCompra_compra1" FromRole="compra" ToRole="itemcompra" />
         </EntityType>
@@ -395,17 +394,17 @@
           <Key>
             <PropertyRef Name="Fornecedor_ID" />
           </Key>
-          <Property Name="cnpj" Type="String" Nullable="false" />
-          <Property Name="endereco" Type="String" />
-          <Property Name="cep" Type="String" />
-          <Property Name="num" Type="Int32" />
-          <Property Name="foneCelular" Type="String" />
-          <Property Name="foneComercial" Type="String" />
-          <Property Name="foneResidencial" Type="String" />
-          <Property Name="nome" Type="String" Nullable="false" />
-          <Property Name="ie" Type="String" />
-          <Property Name="rg" Type="String" Nullable="false" />
-          <Property Name="Fornecedor_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="cnpj" Nullable="false" />
+          <Property Type="String" Name="endereco" />
+          <Property Type="String" Name="cep" />
+          <Property Type="Int32" Name="num" />
+          <Property Type="String" Name="foneCelular" />
+          <Property Type="String" Name="foneComercial" />
+          <Property Type="String" Name="foneResidencial" />
+          <Property Type="String" Name="nome" Nullable="false" />
+          <Property Type="String" Name="ie" />
+          <Property Type="String" Name="rg" Nullable="false" />
+          <Property Type="Int32" Name="Fornecedor_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="compra" Relationship="SOSPostoModel.FK_Compra15" FromRole="fornecedor" ToRole="compra" />
           <NavigationProperty Name="produto" Relationship="SOSPostoModel.fk_produto_fornecedor1" FromRole="fornecedor" ToRole="produto" />
         </EntityType>
@@ -413,11 +412,11 @@
           <Key>
             <PropertyRef Name="ItemCompra_ID" />
           </Key>
-          <Property Name="ItemCompra_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="preco" Type="Decimal" Nullable="false" />
-          <Property Name="quantidade" Type="Int32" Nullable="false" />
-          <Property Name="Compra_ID" Type="Int32" Nullable="false" />
-          <Property Name="Produto_ID" Type="Int32" Nullable="false" />
+          <Property Type="Int32" Name="ItemCompra_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Decimal" Name="preco" Nullable="false" />
+          <Property Type="Int32" Name="quantidade" Nullable="false" />
+          <Property Type="Int32" Name="Compra_ID" Nullable="false" />
+          <Property Type="Int32" Name="Produto_ID" Nullable="false" />
           <NavigationProperty Name="compra" Relationship="SOSPostoModel.fk_itemCompra_compra1" FromRole="itemcompra" ToRole="compra" />
           <NavigationProperty Name="produto" Relationship="SOSPostoModel.fk_itemCompra_produto1" FromRole="itemcompra" ToRole="produto" />
         </EntityType>
@@ -425,12 +424,12 @@
           <Key>
             <PropertyRef Name="ItemVenda_ID" />
           </Key>
-          <Property Name="ItemVenda_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="preco" Type="Decimal" Nullable="false" />
-          <Property Name="quantidade" Type="Int32" />
-          <Property Name="Venda_ID" Type="Int32" Nullable="false" />
-          <Property Name="Produto_ID" Type="Int32" Nullable="false" />
-          <Property Name="Bomba_ID" Type="Int32" />
+          <Property Type="Int32" Name="ItemVenda_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Decimal" Name="preco" Nullable="false" />
+          <Property Type="Int32" Name="quantidade" />
+          <Property Type="Int32" Name="Venda_ID" Nullable="false" />
+          <Property Type="Int32" Name="Produto_ID" Nullable="false" />
+          <Property Type="Int32" Name="Bomba_ID" />
           <NavigationProperty Name="bomba" Relationship="SOSPostoModel.fk_itemVenda_bomba1" FromRole="itemvenda" ToRole="bomba" />
           <NavigationProperty Name="produto" Relationship="SOSPostoModel.fk_itemVenda_produto1" FromRole="itemvenda" ToRole="produto" />
           <NavigationProperty Name="venda" Relationship="SOSPostoModel.fk_itemVenda_venda" FromRole="itemvenda" ToRole="venda" />
@@ -439,14 +438,14 @@
           <Key>
             <PropertyRef Name="Produto_ID" />
           </Key>
-          <Property Name="descricao" Type="String" Nullable="false" />
-          <Property Name="un" Type="String" Nullable="false" />
-          <Property Name="unSecundaria" Type="String" Nullable="false" />
-          <Property Name="valor" Type="Decimal" Nullable="false" />
-          <Property Name="nome" Type="String" Nullable="false" />
-          <Property Name="tipo" Type="String" Nullable="false" />
-          <Property Name="Produto_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Fornecedor_ID" Type="Int32" Nullable="false" />
+          <Property Type="String" Name="descricao" Nullable="false" />
+          <Property Type="String" Name="un" Nullable="false" />
+          <Property Type="String" Name="unSecundaria" Nullable="false" />
+          <Property Type="Decimal" Name="valor" Nullable="false" />
+          <Property Type="String" Name="nome" Nullable="false" />
+          <Property Type="String" Name="tipo" Nullable="false" />
+          <Property Type="Int32" Name="Produto_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Fornecedor_ID" Nullable="false" />
           <NavigationProperty Name="fornecedor" Relationship="SOSPostoModel.fk_produto_fornecedor1" FromRole="produto" ToRole="fornecedor" />
           <NavigationProperty Name="itemcompra" Relationship="SOSPostoModel.fk_itemCompra_produto1" FromRole="produto" ToRole="itemcompra" />
           <NavigationProperty Name="itemvenda" Relationship="SOSPostoModel.fk_itemVenda_produto1" FromRole="produto" ToRole="itemvenda" />
@@ -455,38 +454,38 @@
           <Key>
             <PropertyRef Name="Tanque_ID" />
           </Key>
-          <Property Name="descricao" Type="String" />
-          <Property Name="capacidade" Type="Int32" Nullable="false" />
-          <Property Name="Tanque_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="descricao" />
+          <Property Type="Int32" Name="capacidade" Nullable="false" />
+          <Property Type="Int32" Name="Tanque_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="bomba" Relationship="SOSPostoModel.FK_Bomba10" FromRole="tanque" ToRole="bomba" />
         </EntityType>
         <EntityType Name="usuario">
           <Key>
             <PropertyRef Name="Usuario_ID" />
           </Key>
-          <Property Name="senha" Type="String" Nullable="false" />
-          <Property Name="usuario1" Type="String" Nullable="false" />
-          <Property Name="Usuario_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="senha" Nullable="false" />
+          <Property Type="String" Name="usuario1" Nullable="false" />
+          <Property Type="Int32" Name="Usuario_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="venda" Relationship="SOSPostoModel.FK_Venda16" FromRole="usuario" ToRole="venda" />
         </EntityType>
         <EntityType Name="venda">
           <Key>
             <PropertyRef Name="Venda_ID" />
           </Key>
-          <Property Name="dataEmissao" Type="DateTime" Nullable="false" />
-          <Property Name="dataSaida" Type="DateTime" Nullable="false" />
-          <Property Name="serie" Type="String" Nullable="false" />
-          <Property Name="totalDesconto" Type="Decimal" Nullable="false" />
-          <Property Name="Venda_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Cliente_ID" Type="Int32" Nullable="false" />
-          <Property Name="Usuário_ID" Type="Int32" Nullable="false" />
+          <Property Type="DateTime" Name="dataEmissao" Nullable="false" />
+          <Property Type="DateTime" Name="dataSaida" Nullable="false" />
+          <Property Type="String" Name="serie" Nullable="false" />
+          <Property Type="Decimal" Name="totalDesconto" Nullable="false" />
+          <Property Type="Int32" Name="Venda_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Cliente_ID" Nullable="false" />
+          <Property Type="Int32" Name="Usuário_ID" Nullable="false" />
           <NavigationProperty Name="cliente" Relationship="SOSPostoModel.FK_Venda11" FromRole="venda" ToRole="cliente" />
           <NavigationProperty Name="itemvenda" Relationship="SOSPostoModel.fk_itemVenda_venda" FromRole="venda" ToRole="itemvenda" />
           <NavigationProperty Name="usuario" Relationship="SOSPostoModel.FK_Venda16" FromRole="venda" ToRole="usuario" />
         </EntityType>
         <Association Name="FK_Bomba10">
-          <End Role="tanque" Type="SOSPostoModel.tanque" Multiplicity="1" />
-          <End Role="bomba" Type="SOSPostoModel.bomba" Multiplicity="*" />
+          <End Type="SOSPostoModel.tanque" Role="tanque" Multiplicity="1" />
+          <End Type="SOSPostoModel.bomba" Role="bomba" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tanque">
               <PropertyRef Name="Tanque_ID" />
@@ -497,8 +496,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_itemVenda_bomba1">
-          <End Role="bomba" Type="SOSPostoModel.bomba" Multiplicity="0..1" />
-          <End Role="itemvenda" Type="SOSPostoModel.itemvenda" Multiplicity="*" />
+          <End Type="SOSPostoModel.bomba" Role="bomba" Multiplicity="0..1" />
+          <End Type="SOSPostoModel.itemvenda" Role="itemvenda" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="bomba">
               <PropertyRef Name="Bomba_ID" />
@@ -509,8 +508,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Venda11">
-          <End Role="cliente" Type="SOSPostoModel.cliente" Multiplicity="1" />
-          <End Role="venda" Type="SOSPostoModel.venda" Multiplicity="*" />
+          <End Type="SOSPostoModel.cliente" Role="cliente" Multiplicity="1" />
+          <End Type="SOSPostoModel.venda" Role="venda" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="cliente">
               <PropertyRef Name="Cliente_ID" />
@@ -521,8 +520,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Compra15">
-          <End Role="fornecedor" Type="SOSPostoModel.fornecedor" Multiplicity="1" />
-          <End Role="compra" Type="SOSPostoModel.compra" Multiplicity="*" />
+          <End Type="SOSPostoModel.fornecedor" Role="fornecedor" Multiplicity="1" />
+          <End Type="SOSPostoModel.compra" Role="compra" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="fornecedor">
               <PropertyRef Name="Fornecedor_ID" />
@@ -533,8 +532,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_itemCompra_compra1">
-          <End Role="compra" Type="SOSPostoModel.compra" Multiplicity="1" />
-          <End Role="itemcompra" Type="SOSPostoModel.itemcompra" Multiplicity="*" />
+          <End Type="SOSPostoModel.compra" Role="compra" Multiplicity="1" />
+          <End Type="SOSPostoModel.itemcompra" Role="itemcompra" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="compra">
               <PropertyRef Name="Compra_ID" />
@@ -545,8 +544,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_produto_fornecedor1">
-          <End Role="fornecedor" Type="SOSPostoModel.fornecedor" Multiplicity="1" />
-          <End Role="produto" Type="SOSPostoModel.produto" Multiplicity="*" />
+          <End Type="SOSPostoModel.fornecedor" Role="fornecedor" Multiplicity="1" />
+          <End Type="SOSPostoModel.produto" Role="produto" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="fornecedor">
               <PropertyRef Name="Fornecedor_ID" />
@@ -557,8 +556,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_itemCompra_produto1">
-          <End Role="produto" Type="SOSPostoModel.produto" Multiplicity="1" />
-          <End Role="itemcompra" Type="SOSPostoModel.itemcompra" Multiplicity="*" />
+          <End Type="SOSPostoModel.produto" Role="produto" Multiplicity="1" />
+          <End Type="SOSPostoModel.itemcompra" Role="itemcompra" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="produto">
               <PropertyRef Name="Produto_ID" />
@@ -569,8 +568,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_itemVenda_produto1">
-          <End Role="produto" Type="SOSPostoModel.produto" Multiplicity="1" />
-          <End Role="itemvenda" Type="SOSPostoModel.itemvenda" Multiplicity="*" />
+          <End Type="SOSPostoModel.produto" Role="produto" Multiplicity="1" />
+          <End Type="SOSPostoModel.itemvenda" Role="itemvenda" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="produto">
               <PropertyRef Name="Produto_ID" />
@@ -581,8 +580,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_itemVenda_venda">
-          <End Role="venda" Type="SOSPostoModel.venda" Multiplicity="1" />
-          <End Role="itemvenda" Type="SOSPostoModel.itemvenda" Multiplicity="*" />
+          <End Type="SOSPostoModel.venda" Role="venda" Multiplicity="1" />
+          <End Type="SOSPostoModel.itemvenda" Role="itemvenda" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="venda">
               <PropertyRef Name="Venda_ID" />
@@ -593,8 +592,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Venda16">
-          <End Role="usuario" Type="SOSPostoModel.usuario" Multiplicity="1" />
-          <End Role="venda" Type="SOSPostoModel.venda" Multiplicity="*" />
+          <End Type="SOSPostoModel.usuario" Role="usuario" Multiplicity="1" />
+          <End Type="SOSPostoModel.venda" Role="venda" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="usuario">
               <PropertyRef Name="Usuario_ID" />
@@ -604,97 +603,137 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="SOSPostoModelStoreContainer" CdmEntityContainer="SOSPostoDataContext">
-          <EntitySetMapping Name="bomba"><EntityTypeMapping TypeName="SOSPostoModel.bomba"><MappingFragment StoreEntitySet="bomba">
-            <ScalarProperty Name="numBomba" ColumnName="numBomba" />
-            <ScalarProperty Name="Tanque_ID" ColumnName="Tanque_ID" />
-            <ScalarProperty Name="Bomba_ID" ColumnName="Bomba_ID" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="cliente"><EntityTypeMapping TypeName="SOSPostoModel.cliente"><MappingFragment StoreEntitySet="cliente">
-            <ScalarProperty Name="cpf" ColumnName="cpf" />
-            <ScalarProperty Name="endereco" ColumnName="endereco" />
-            <ScalarProperty Name="cep" ColumnName="cep" />
-            <ScalarProperty Name="cidade" ColumnName="cidade" />
-            <ScalarProperty Name="num" ColumnName="num" />
-            <ScalarProperty Name="fonecelular" ColumnName="fonecelular" />
-            <ScalarProperty Name="fonecomercial" ColumnName="fonecomercial" />
-            <ScalarProperty Name="foneresidencial" ColumnName="foneresidencial" />
-            <ScalarProperty Name="nome" ColumnName="nome" />
-            <ScalarProperty Name="rg" ColumnName="rg" />
-            <ScalarProperty Name="ativo" ColumnName="ativo" />
-            <ScalarProperty Name="Cliente_ID" ColumnName="Cliente_ID" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="compra"><EntityTypeMapping TypeName="SOSPostoModel.compra"><MappingFragment StoreEntitySet="compra">
-            <ScalarProperty Name="dataEmissao" ColumnName="dataEmissao" />
-            <ScalarProperty Name="dataEntrada" ColumnName="dataEntrada" />
-            <ScalarProperty Name="serie" ColumnName="serie" />
-            <ScalarProperty Name="desconto" ColumnName="desconto" />
-            <ScalarProperty Name="totalValorCompra" ColumnName="totalValorCompra" />
-            <ScalarProperty Name="Compra_ID" ColumnName="Compra_ID" />
-            <ScalarProperty Name="Fornecedor_ID" ColumnName="Fornecedor_ID" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="fornecedor"><EntityTypeMapping TypeName="SOSPostoModel.fornecedor"><MappingFragment StoreEntitySet="fornecedor">
-            <ScalarProperty Name="cnpj" ColumnName="cnpj" />
-            <ScalarProperty Name="endereco" ColumnName="endereco" />
-            <ScalarProperty Name="cep" ColumnName="cep" />
-            <ScalarProperty Name="num" ColumnName="num" />
-            <ScalarProperty Name="foneCelular" ColumnName="foneCelular" />
-            <ScalarProperty Name="foneComercial" ColumnName="foneComercial" />
-            <ScalarProperty Name="foneResidencial" ColumnName="foneResidencial" />
-            <ScalarProperty Name="nome" ColumnName="nome" />
-            <ScalarProperty Name="ie" ColumnName="ie" />
-            <ScalarProperty Name="rg" ColumnName="rg" />
-            <ScalarProperty Name="Fornecedor_ID" ColumnName="Fornecedor_ID" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="itemcompra"><EntityTypeMapping TypeName="SOSPostoModel.itemcompra"><MappingFragment StoreEntitySet="itemcompra">
-            <ScalarProperty Name="ItemCompra_ID" ColumnName="ItemCompra_ID" />
-            <ScalarProperty Name="preco" ColumnName="preco" />
-            <ScalarProperty Name="quantidade" ColumnName="quantidade" />
-            <ScalarProperty Name="Compra_ID" ColumnName="Compra_ID" />
-            <ScalarProperty Name="Produto_ID" ColumnName="Produto_ID" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="itemvenda"><EntityTypeMapping TypeName="SOSPostoModel.itemvenda"><MappingFragment StoreEntitySet="itemvenda">
-            <ScalarProperty Name="ItemVenda_ID" ColumnName="ItemVenda_ID" />
-            <ScalarProperty Name="preco" ColumnName="preco" />
-            <ScalarProperty Name="quantidade" ColumnName="quantidade" />
-            <ScalarProperty Name="Venda_ID" ColumnName="Venda_ID" />
-            <ScalarProperty Name="Produto_ID" ColumnName="Produto_ID" />
-            <ScalarProperty Name="Bomba_ID" ColumnName="Bomba_ID" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="produto"><EntityTypeMapping TypeName="SOSPostoModel.produto"><MappingFragment StoreEntitySet="produto">
-            <ScalarProperty Name="descricao" ColumnName="descricao" />
-            <ScalarProperty Name="un" ColumnName="un" />
-            <ScalarProperty Name="unSecundaria" ColumnName="unSecundaria" />
-            <ScalarProperty Name="valor" ColumnName="valor" />
-            <ScalarProperty Name="nome" ColumnName="nome" />
-            <ScalarProperty Name="tipo" ColumnName="tipo" />
-            <ScalarProperty Name="Produto_ID" ColumnName="Produto_ID" />
-            <ScalarProperty Name="Fornecedor_ID" ColumnName="Fornecedor_ID" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="tanque"><EntityTypeMapping TypeName="SOSPostoModel.tanque"><MappingFragment StoreEntitySet="tanque">
-            <ScalarProperty Name="descricao" ColumnName="descricao" />
-            <ScalarProperty Name="capacidade" ColumnName="capacidade" />
-            <ScalarProperty Name="Tanque_ID" ColumnName="Tanque_ID" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="usuario"><EntityTypeMapping TypeName="SOSPostoModel.usuario"><MappingFragment StoreEntitySet="usuario">
-            <ScalarProperty Name="senha" ColumnName="senha" />
-            <ScalarProperty Name="usuario1" ColumnName="usuario" />
-            <ScalarProperty Name="Usuario_ID" ColumnName="Usuario_ID" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="venda"><EntityTypeMapping TypeName="SOSPostoModel.venda"><MappingFragment StoreEntitySet="venda">
-            <ScalarProperty Name="dataEmissao" ColumnName="dataEmissao" />
-            <ScalarProperty Name="dataSaida" ColumnName="dataSaida" />
-            <ScalarProperty Name="serie" ColumnName="serie" />
-            <ScalarProperty Name="totalDesconto" ColumnName="totalDesconto" />
-            <ScalarProperty Name="Venda_ID" ColumnName="Venda_ID" />
-            <ScalarProperty Name="Cliente_ID" ColumnName="Cliente_ID" />
-            <ScalarProperty Name="Usuário_ID" ColumnName="Usuário_ID" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="bomba">
+            <EntityTypeMapping TypeName="SOSPostoModel.bomba">
+              <MappingFragment StoreEntitySet="bomba">
+                <ScalarProperty Name="Bomba_ID" ColumnName="Bomba_ID" />
+                <ScalarProperty Name="Tanque_ID" ColumnName="Tanque_ID" />
+                <ScalarProperty Name="numBomba" ColumnName="numBomba" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cliente">
+            <EntityTypeMapping TypeName="SOSPostoModel.cliente">
+              <MappingFragment StoreEntitySet="cliente">
+                <ScalarProperty Name="Cliente_ID" ColumnName="Cliente_ID" />
+                <ScalarProperty Name="ativo" ColumnName="ativo" />
+                <ScalarProperty Name="rg" ColumnName="rg" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="foneresidencial" ColumnName="foneresidencial" />
+                <ScalarProperty Name="fonecomercial" ColumnName="fonecomercial" />
+                <ScalarProperty Name="fonecelular" ColumnName="fonecelular" />
+                <ScalarProperty Name="num" ColumnName="num" />
+                <ScalarProperty Name="cidade" ColumnName="cidade" />
+                <ScalarProperty Name="cep" ColumnName="cep" />
+                <ScalarProperty Name="endereco" ColumnName="endereco" />
+                <ScalarProperty Name="cpf" ColumnName="cpf" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="compra">
+            <EntityTypeMapping TypeName="SOSPostoModel.compra">
+              <MappingFragment StoreEntitySet="compra">
+                <ScalarProperty Name="Fornecedor_ID" ColumnName="Fornecedor_ID" />
+                <ScalarProperty Name="Compra_ID" ColumnName="Compra_ID" />
+                <ScalarProperty Name="totalValorCompra" ColumnName="totalValorCompra" />
+                <ScalarProperty Name="desconto" ColumnName="desconto" />
+                <ScalarProperty Name="serie" ColumnName="serie" />
+                <ScalarProperty Name="dataEntrada" ColumnName="dataEntrada" />
+                <ScalarProperty Name="dataEmissao" ColumnName="dataEmissao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="fornecedor">
+            <EntityTypeMapping TypeName="SOSPostoModel.fornecedor">
+              <MappingFragment StoreEntitySet="fornecedor">
+                <ScalarProperty Name="Fornecedor_ID" ColumnName="Fornecedor_ID" />
+                <ScalarProperty Name="rg" ColumnName="rg" />
+                <ScalarProperty Name="ie" ColumnName="ie" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="foneResidencial" ColumnName="foneResidencial" />
+                <ScalarProperty Name="foneComercial" ColumnName="foneComercial" />
+                <ScalarProperty Name="foneCelular" ColumnName="foneCelular" />
+                <ScalarProperty Name="num" ColumnName="num" />
+                <ScalarProperty Name="cep" ColumnName="cep" />
+                <ScalarProperty Name="endereco" ColumnName="endereco" />
+                <ScalarProperty Name="cnpj" ColumnName="cnpj" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="itemcompra">
+            <EntityTypeMapping TypeName="SOSPostoModel.itemcompra">
+              <MappingFragment StoreEntitySet="itemcompra">
+                <ScalarProperty Name="Produto_ID" ColumnName="Produto_ID" />
+                <ScalarProperty Name="Compra_ID" ColumnName="Compra_ID" />
+                <ScalarProperty Name="quantidade" ColumnName="quantidade" />
+                <ScalarProperty Name="preco" ColumnName="preco" />
+                <ScalarProperty Name="ItemCompra_ID" ColumnName="ItemCompra_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="itemvenda">
+            <EntityTypeMapping TypeName="SOSPostoModel.itemvenda">
+              <MappingFragment StoreEntitySet="itemvenda">
+                <ScalarProperty Name="Bomba_ID" ColumnName="Bomba_ID" />
+                <ScalarProperty Name="Produto_ID" ColumnName="Produto_ID" />
+                <ScalarProperty Name="Venda_ID" ColumnName="Venda_ID" />
+                <ScalarProperty Name="quantidade" ColumnName="quantidade" />
+                <ScalarProperty Name="preco" ColumnName="preco" />
+                <ScalarProperty Name="ItemVenda_ID" ColumnName="ItemVenda_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="produto">
+            <EntityTypeMapping TypeName="SOSPostoModel.produto">
+              <MappingFragment StoreEntitySet="produto">
+                <ScalarProperty Name="Fornecedor_ID" ColumnName="Fornecedor_ID" />
+                <ScalarProperty Name="Produto_ID" ColumnName="Produto_ID" />
+                <ScalarProperty Name="tipo" ColumnName="tipo" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="valor" ColumnName="valor" />
+                <ScalarProperty Name="unSecundaria" ColumnName="unSecundaria" />
+                <ScalarProperty Name="un" ColumnName="un" />
+                <ScalarProperty Name="descricao" ColumnName="descricao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tanque">
+            <EntityTypeMapping TypeName="SOSPostoModel.tanque">
+              <MappingFragment StoreEntitySet="tanque">
+                <ScalarProperty Name="Tanque_ID" ColumnName="Tanque_ID" />
+                <ScalarProperty Name="capacidade" ColumnName="capacidade" />
+                <ScalarProperty Name="descricao" ColumnName="descricao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="usuario">
+            <EntityTypeMapping TypeName="SOSPostoModel.usuario">
+              <MappingFragment StoreEntitySet="usuario">
+                <ScalarProperty Name="Usuario_ID" ColumnName="Usuario_ID" />
+                <ScalarProperty Name="usuario1" ColumnName="usuario" />
+                <ScalarProperty Name="senha" ColumnName="senha" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="venda">
+            <EntityTypeMapping TypeName="SOSPostoModel.venda">
+              <MappingFragment StoreEntitySet="venda">
+                <ScalarProperty Name="Usuário_ID" ColumnName="Usuário_ID" />
+                <ScalarProperty Name="Cliente_ID" ColumnName="Cliente_ID" />
+                <ScalarProperty Name="Venda_ID" ColumnName="Venda_ID" />
+                <ScalarProperty Name="totalDesconto" ColumnName="totalDesconto" />
+                <ScalarProperty Name="serie" ColumnName="serie" />
+                <ScalarProperty Name="dataSaida" ColumnName="dataSaida" />
+                <ScalarProperty Name="dataEmissao" ColumnName="dataEmissao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -717,55 +756,62 @@
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
       <Diagram Name="SOSPostoModel">
-        <EntityTypeShape EntityType="SOSPostoModel.bomba" Width="1.5" PointX="5.25" PointY="7.375" Height="1.9802864583333317" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOSPostoModel.cliente" Width="1.5" PointX="0.5" PointY="3.625" Height="3.5186979166666656" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOSPostoModel.compra" Width="1.5" PointX="10.375" PointY="7.75" Height="2.7494921875000014" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOSPostoModel.fornecedor" Width="1.5" PointX="8" PointY="7.625" Height="3.5186979166666674" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOSPostoModel.itemcompra" Width="1.5" PointX="10.5" PointY="4" Height="2.3648893229166674" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOSPostoModel.itemvenda" Width="1.5" PointX="5.25" PointY="3.875" Height="2.7494921874999996" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOSPostoModel.produto" Width="1.5" PointX="8" PointY="3.75" Height="3.1340950520833317" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOSPostoModel.tanque" Width="1.5" PointX="3" PointY="7.625" Height="1.7879850260416674" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOSPostoModel.usuario" Width="1.5" PointX="2.75" PointY="1.125" Height="1.7879850260416674" IsExpanded="true" />
-        <EntityTypeShape EntityType="SOSPostoModel.venda" Width="1.5" PointX="2.75" PointY="3.75" Height="2.9417936197916674" IsExpanded="true" />
-        <AssociationConnector Association="SOSPostoModel.FK_Bomba10" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="8.4901432291666659" />
-          <ConnectorPoint PointX="5.25" PointY="8.4901432291666659" />
+        <EntityTypeShape EntityType="SOSPostoModel.bomba" Width="1.5" PointX="3" PointY="8.5" Height="1.9802864583333353" />
+        <EntityTypeShape EntityType="SOSPostoModel.cliente" Width="1.5" PointX="0.75" PointY="1" Height="3.5186979166666741" />
+        <EntityTypeShape EntityType="SOSPostoModel.compra" Width="1.5" PointX="3" PointY="15.625" Height="2.749492187499996" />
+        <EntityTypeShape EntityType="SOSPostoModel.fornecedor" Width="1.5" PointX="0.75" PointY="11.25" Height="3.5186979166666674" />
+        <EntityTypeShape EntityType="SOSPostoModel.itemcompra" Width="1.5" PointX="5.25" PointY="13.75" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="SOSPostoModel.itemvenda" Width="1.5" PointX="5.25" PointY="1.375" Height="2.7494921875000031" />
+        <EntityTypeShape EntityType="SOSPostoModel.produto" Width="1.5" PointX="3" PointY="11.375" Height="3.1340950520833388" />
+        <EntityTypeShape EntityType="SOSPostoModel.tanque" Width="1.5" PointX="0.75" PointY="8.625" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="SOSPostoModel.usuario" Width="1.5" PointX="0.75" PointY="5.875" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="SOSPostoModel.venda" Width="1.5" PointX="3" PointY="1.25" Height="2.9417936197916674" />
+        <AssociationConnector Association="SOSPostoModel.FK_Bomba10" >
+          <ConnectorPoint PointX="2.25" PointY="9.5189925130208337" />
+          <ConnectorPoint PointX="3" PointY="9.5189925130208337" />
         </AssociationConnector>
-        <AssociationConnector Association="SOSPostoModel.fk_itemVenda_bomba1" ManuallyRouted="false">
-          <ConnectorPoint PointX="6" PointY="7.375" />
-          <ConnectorPoint PointX="6" PointY="6.6244921875" />
+        <AssociationConnector Association="SOSPostoModel.fk_itemVenda_bomba1" >
+          <ConnectorPoint PointX="4.5" PointY="9.4901432291666676" />
+          <ConnectorPoint PointX="4.791666666666667" PointY="9.4901432291666676" />
+          <ConnectorPoint PointX="4.958333333333333" PointY="9.4901432291666676" />
+          <ConnectorPoint PointX="6" PointY="9.4901432291666676" />
+          <ConnectorPoint PointX="6" PointY="4.1244921875000031" />
         </AssociationConnector>
-        <AssociationConnector Association="SOSPostoModel.FK_Venda11" ManuallyRouted="false">
-          <ConnectorPoint PointX="2" PointY="5.2208968098958337" />
-          <ConnectorPoint PointX="2.75" PointY="5.2208968098958337" />
+        <AssociationConnector Association="SOSPostoModel.FK_Venda11" >
+          <ConnectorPoint PointX="2.25" PointY="2.7208968098958337" />
+          <ConnectorPoint PointX="3" PointY="2.7208968098958337" />
         </AssociationConnector>
-        <AssociationConnector Association="SOSPostoModel.FK_Compra15" ManuallyRouted="false">
-          <ConnectorPoint PointX="9.5" PointY="9.1247460937500016" />
-          <ConnectorPoint PointX="10.375" PointY="9.1247460937500016" />
+        <AssociationConnector Association="SOSPostoModel.FK_Compra15" >
+          <ConnectorPoint PointX="1.5" PointY="14.768697916666667" />
+          <ConnectorPoint PointX="1.5" PointY="16.999746093749998" />
+          <ConnectorPoint PointX="3" PointY="16.999746093749998" />
         </AssociationConnector>
-        <AssociationConnector Association="SOSPostoModel.fk_itemCompra_compra1" ManuallyRouted="false">
-          <ConnectorPoint PointX="11.1875" PointY="7.75" />
-          <ConnectorPoint PointX="11.1875" PointY="6.3648893229166674" />
+        <AssociationConnector Association="SOSPostoModel.fk_itemCompra_compra1" >
+          <ConnectorPoint PointX="4.5" PointY="15.869944661458334" />
+          <ConnectorPoint PointX="5.25" PointY="15.869944661458334" />
         </AssociationConnector>
-        <AssociationConnector Association="SOSPostoModel.fk_produto_fornecedor1" ManuallyRouted="false">
-          <ConnectorPoint PointX="8.75" PointY="7.625" />
-          <ConnectorPoint PointX="8.75" PointY="6.8840950520833317" />
+        <AssociationConnector Association="SOSPostoModel.fk_produto_fornecedor1" >
+          <ConnectorPoint PointX="2.25" PointY="12.942047526041669" />
+          <ConnectorPoint PointX="3" PointY="12.942047526041669" />
         </AssociationConnector>
-        <AssociationConnector Association="SOSPostoModel.fk_itemCompra_produto1" ManuallyRouted="false">
-          <ConnectorPoint PointX="9.5" PointY="5.1824446614583337" />
-          <ConnectorPoint PointX="10.5" PointY="5.1824446614583337" />
+        <AssociationConnector Association="SOSPostoModel.fk_itemCompra_produto1" >
+          <ConnectorPoint PointX="4.5" PointY="14.129547526041669" />
+          <ConnectorPoint PointX="5.25" PointY="14.129547526041669" />
         </AssociationConnector>
-        <AssociationConnector Association="SOSPostoModel.fk_itemVenda_produto1" ManuallyRouted="false">
-          <ConnectorPoint PointX="8" PointY="5.24974609375" />
-          <ConnectorPoint PointX="6.75" PointY="5.24974609375" />
+        <AssociationConnector Association="SOSPostoModel.fk_itemVenda_produto1" >
+          <ConnectorPoint PointX="4.5" PointY="11.376152846153847" />
+          <ConnectorPoint PointX="4.875" PointY="11.001152846153847" />
+          <ConnectorPoint PointX="4.875" PointY="2.7497460937500016" />
+          <ConnectorPoint PointX="5.25" PointY="2.7497460937500016" />
         </AssociationConnector>
-        <AssociationConnector Association="SOSPostoModel.fk_itemVenda_venda" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.25" PointY="5.24974609375" />
-          <ConnectorPoint PointX="5.25" PointY="5.24974609375" />
+        <AssociationConnector Association="SOSPostoModel.fk_itemVenda_venda" >
+          <ConnectorPoint PointX="4.5" PointY="1.9998730468750008" />
+          <ConnectorPoint PointX="5.25" PointY="1.9998730468750008" />
         </AssociationConnector>
-        <AssociationConnector Association="SOSPostoModel.FK_Venda16" ManuallyRouted="false">
-          <ConnectorPoint PointX="3.5" PointY="2.9129850260416674" />
-          <ConnectorPoint PointX="3.5" PointY="3.75" />
+        <AssociationConnector Association="SOSPostoModel.FK_Venda16" >
+          <ConnectorPoint PointX="2.25" PointY="6.7689925130208337" />
+          <ConnectorPoint PointX="3.75" PointY="6.7689925130208337" />
+          <ConnectorPoint PointX="3.75" PointY="4.1917936197916674" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>

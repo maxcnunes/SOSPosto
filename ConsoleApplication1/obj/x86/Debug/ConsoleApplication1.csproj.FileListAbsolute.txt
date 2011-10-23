@@ -8,3 +8,13 @@ C:\Users\Max\Documents\Visual Studio 2010\Projects\SOSPosto\ConsoleApplication1\
 C:\Users\Max\Documents\Visual Studio 2010\Projects\SOSPosto\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
 C:\Users\Max\Documents\Visual Studio 2010\Projects\SOSPosto\ConsoleApplication1\bin\Debug\SP.DAL.dll
 C:\Users\Max\Documents\Visual Studio 2010\Projects\SOSPosto\ConsoleApplication1\bin\Debug\SP.DAL.pdb
+C:\Users\Max\RepositorioGIT\SOSPosto\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+C:\Users\Max\RepositorioGIT\SOSPosto\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.exe
+C:\Users\Max\RepositorioGIT\SOSPosto\ConsoleApplication1\obj\x86\Debug\ConsoleApplication1.pdb
+C:\Users\Max\RepositorioGIT\SOSPosto\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+C:\Users\Max\RepositorioGIT\SOSPosto\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+C:\Users\Max\RepositorioGIT\SOSPosto\ConsoleApplication1\bin\Debug\SP.DAL.dll
+C:\Users\Max\RepositorioGIT\SOSPosto\ConsoleApplication1\bin\Debug\SP.Entities.dll
+C:\Users\Max\RepositorioGIT\SOSPosto\ConsoleApplication1\bin\Debug\SP.DAL.pdb
+C:\Users\Max\RepositorioGIT\SOSPosto\ConsoleApplication1\bin\Debug\SP.Entities.pdb
+C:\Users\Max\RepositorioGIT\SOSPosto\ConsoleApplication1\obj\x86\Debug\ResolveAssemblyReference.cache

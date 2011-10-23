@@ -1,0 +1,17 @@
+C:\Users\Max\RepositorioGIT\SOSPosto\SP.Service.Host\bin\SP.Service.Host.dll
+C:\Users\Max\RepositorioGIT\SOSPosto\SP.Service.Host\bin\SP.Service.Host.pdb
+C:\Users\Max\RepositorioGIT\SOSPosto\SP.Service.Host\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Max\RepositorioGIT\SOSPosto\SP.Service.Host\obj\Debug\SP.Service.Host.dll
+C:\Users\Max\RepositorioGIT\SOSPosto\SP.Service.Host\obj\Debug\SP.Service.Host.pdb
+C:\Users\Max\RepositorioGIT\SOSPosto\SP.Service.Host\bin\SP.Entities.dll
+C:\Users\Max\RepositorioGIT\SOSPosto\SP.Service.Host\bin\SP.Service.dll
+C:\Users\Max\RepositorioGIT\SOSPosto\SP.Service.Host\bin\SP.Contract.Service.dll
+C:\Users\Max\RepositorioGIT\SOSPosto\SP.Service.Host\bin\SP.Contract.Data.dll
+C:\Users\Max\RepositorioGIT\SOSPosto\SP.Service.Host\bin\SP.DAL.dll
+C:\Users\Max\RepositorioGIT\SOSPosto\SP.Service.Host\bin\SP.Entities.pdb
+C:\Users\Max\RepositorioGIT\SOSPosto\SP.Service.Host\bin\SP.Service.pdb
+C:\Users\Max\RepositorioGIT\SOSPosto\SP.Service.Host\bin\SP.Contract.Service.pdb
+C:\Users\Max\RepositorioGIT\SOSPosto\SP.Service.Host\bin\SP.Contract.Data.pdb
+C:\Users\Max\RepositorioGIT\SOSPosto\SP.Service.Host\bin\SP.DAL.pdb
+C:\Users\Max\RepositorioGIT\SOSPosto\SP.Service.Host\bin\SP.Contract.Data.Translator.dll
+C:\Users\Max\RepositorioGIT\SOSPosto\SP.Service.Host\bin\SP.Contract.Data.Translator.pdb

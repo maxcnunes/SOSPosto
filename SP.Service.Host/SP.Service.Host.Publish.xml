@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="C:\Users\Max\Desktop\wcf" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="bin/SP.Service.Host.pdb" publishTime="10/23/2011 10:29:02" />
+    <file relUrl="bin/SP.Service.Host.dll" publishTime="10/23/2011 10:29:02" />
+    <file relUrl="Web.config" publishTime="10/23/2011 10:32:54" />
+    <file relUrl="Tanque.svc" publishTime="10/23/2011 10:24:56" />
+  </publishProfile>
+</publishData>
