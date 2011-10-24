@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Bomba.cs" />
+    <Compile Include="Cliente.cs" />
     <Compile Include="ItemVenda.cs" />
     <Compile Include="Produto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

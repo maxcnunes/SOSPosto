@@ -36,6 +36,8 @@
     <Reference Include="System.ServiceModel" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IBombaService.cs" />
+    <Compile Include="IClienteService.cs" />
     <Compile Include="IProdutoService.cs" />
     <Compile Include="ITanqueService.cs" />
     <Compile Include="IVendaService.cs" />

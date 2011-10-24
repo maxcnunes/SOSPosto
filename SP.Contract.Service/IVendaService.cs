@@ -10,7 +10,7 @@ namespace SP.Contract.Service
         Venda RealizarVendaCaixa(ItemVenda[] requestItens, Venda requestVenda);
 
         [OperationContract]
-        Venda RealizarVendaBombaAutomatica(Venda requestVenda);
+        Venda RealizarVendaBombaAutomatica(ItemVenda requestItem, Venda requestVenda);
 
         [OperationContract]
         bool Cancelar();

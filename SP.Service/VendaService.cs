@@ -58,9 +58,40 @@ namespace SP.Service
             }
         }
 
-        public Venda RealizarVendaBombaAutomatica(Venda requestVenda)
+        public Venda RealizarVendaBombaAutomatica(Contract.Data.ItemVenda requestItem, Venda requestVenda)
         {
-            throw new NotImplementedException();
+            #region Validacoes
+            if (requestVenda == null)
+            {
+                throw new ArgumentNullException("requestVenda");
+            }
+
+            #endregion
+
+            using (var ctx = new SOSPostoDataContext())
+            {
+                var venda = Translator.Translate(requestVenda);
+
+
+                //foreach (var item in requestItens)
+                //{
+                //    var itemVenda = Translator.Translate(item);
+
+                //    //Verifica se alguns produto da lista esta em falta no estoque
+                //    if (produtoClient.QtdeDisponivel(Translator.Translate(itemVenda.produto)) == false)
+                //    {
+                //        throw new ArgumentException("Quantidade solicitada, do produto {0}, excede a disponível no estoque.", itemVenda.produto.nome);
+                //    }
+
+                //    venda.itemvenda.Add(itemVenda);
+                //}
+
+
+                //ctx.venda.AddObject(venda);
+                //ctx.SaveChanges();
+
+                return Translator.Translate(venda);
+            }
         }
 
         public bool Cancelar()
