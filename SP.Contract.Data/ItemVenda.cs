@@ -11,16 +11,16 @@ namespace SP.Contract.Data
     public class ItemVenda
     {
         [DataMember]
-        public int Codigo { get; set; }
+        public int codigo { get; set; }
         [DataMember]
         public decimal preco { get; set; }
         [DataMember]
-        public Nullable<int> quantidade { get; set; }
+        public int quantidade { get; set; }
         [DataMember]
-        public int Venda_ID { get; set; }
+        public int codigo_venda { get; set; }
         [DataMember]
-        int Produto_ID { get; set; }
+        int codigo_produto { get; set; }
         [DataMember]
-        public Nullable<int> CodigoBomba;
+        public Nullable<int> codigo_bomba;
     }
 }

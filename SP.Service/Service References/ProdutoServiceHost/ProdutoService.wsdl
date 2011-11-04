@@ -13,6 +13,12 @@
   <wsdl:message name="IProdutoService_Inserir_OutputMessage">
     <wsdl:part name="parameters" element="tns:InserirResponse" />
   </wsdl:message>
+  <wsdl:message name="IProdutoService_BuscarPeloCodigo_InputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarPeloCodigo" />
+  </wsdl:message>
+  <wsdl:message name="IProdutoService_BuscarPeloCodigo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuscarPeloCodigoResponse" />
+  </wsdl:message>
   <wsdl:message name="IProdutoService_BuscarTodos_InputMessage">
     <wsdl:part name="parameters" element="tns:BuscarTodos" />
   </wsdl:message>
@@ -30,6 +36,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IProdutoService/Inserir" message="tns:IProdutoService_Inserir_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IProdutoService/InserirResponse" message="tns:IProdutoService_Inserir_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="BuscarPeloCodigo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProdutoService/BuscarPeloCodigo" message="tns:IProdutoService_BuscarPeloCodigo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProdutoService/BuscarPeloCodigoResponse" message="tns:IProdutoService_BuscarPeloCodigo_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="BuscarTodos">
       <wsdl:input wsaw:Action="http://tempuri.org/IProdutoService/BuscarTodos" message="tns:IProdutoService_BuscarTodos_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IProdutoService/BuscarTodosResponse" message="tns:IProdutoService_BuscarTodos_OutputMessage" />
@@ -43,6 +53,15 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="Inserir">
       <soap:operation soapAction="http://tempuri.org/IProdutoService/Inserir" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BuscarPeloCodigo">
+      <soap:operation soapAction="http://tempuri.org/IProdutoService/BuscarPeloCodigo" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

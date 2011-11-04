@@ -10,9 +10,12 @@ namespace SP.Contract.Service
         Produto Inserir(Produto _produto);
 
         [OperationContract]
+        Produto BuscarPeloCodigo(int codigo);
+
+        [OperationContract]
         Produto[] BuscarTodos();
 
         [OperationContract]
-        bool QtdeDisponivel(Produto _produto);
+        bool QtdeDisponivel(int codigo, int quantidade);
     }
 }

@@ -18,7 +18,13 @@ namespace SP.Service
             throw new NotImplementedException();
         }
 
-        public bool QtdeDisponivel(Contract.Data.Produto _produto)
+        public Contract.Data.Produto BuscarPeloCodigo(int codigo)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        public bool QtdeDisponivel(int codigo, int quantidade)
         {
             throw new NotImplementedException();
         }

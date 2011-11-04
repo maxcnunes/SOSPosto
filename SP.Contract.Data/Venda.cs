@@ -17,10 +17,12 @@ namespace SP.Contract.Data
         [DataMember]
         public decimal totalDesconto { get; set; }
         [DataMember]
-        public int Venda_ID { get; set; }
+        public int codigo_venda { get; set; }
         [DataMember]
-        public int Cliente_ID { get; set; }
+        public int codigo_cliente { get; set; }
         [DataMember]
-        public int Usuário_ID { get; set; }
+        public int codigo_funcionario { get; set; }
+        [DataMember]
+        public ItemVenda[] items { get; set; }
     }
 }

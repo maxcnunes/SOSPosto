@@ -20,7 +20,9 @@ namespace SP.Contract.Data
         [DataMember]
         public string tipo { get; set; }
         [DataMember]
-        public int Produto_ID { get; set; }
+        public int codigo_produto { get; set; }
         public int Fornecedor_ID { get; set; }
+
+        enum TipoProduto { Combustivel, Conveniencia }
     }
 }

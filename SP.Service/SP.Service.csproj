@@ -31,9 +31,26 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="BombaService.cs" />
+    <Compile Include="ClienteService.cs" />
     <Compile Include="ProdutoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\BombaServiceHost\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ClienteServiceHost\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\ProdutoServiceHost\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\TanqueServiceHost\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -76,7 +93,30 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Properties\DataSources\SP.Contract.Data.Bomba.datasource" />
+    <None Include="Properties\DataSources\SP.Contract.Data.Cliente.datasource" />
     <None Include="Properties\DataSources\SP.Contract.Data.Produto.datasource" />
+    <None Include="Properties\DataSources\SP.Contract.Data.Tanque.datasource" />
+    <None Include="Service References\BombaServiceHost\BombaService.wsdl" />
+    <None Include="Service References\BombaServiceHost\BombaService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BombaServiceHost\BombaService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\BombaServiceHost\BombaService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ClienteServiceHost\ClienteService.wsdl" />
+    <None Include="Service References\ClienteServiceHost\ClienteService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ClienteServiceHost\ClienteService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ClienteServiceHost\ClienteService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\ProdutoServiceHost\ProdutoService.wsdl" />
     <None Include="Service References\ProdutoServiceHost\ProdutoService.xsd">
       <SubType>Designer</SubType>
@@ -87,9 +127,22 @@
     <None Include="Service References\ProdutoServiceHost\ProdutoService2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\TanqueServiceHost\TanqueService.wsdl" />
+    <None Include="Service References\TanqueServiceHost\TanqueService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TanqueServiceHost\TanqueService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\TanqueServiceHost\TanqueService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\BombaServiceHost\" />
+    <WCFMetadataStorage Include="Service References\ClienteServiceHost\" />
     <WCFMetadataStorage Include="Service References\ProdutoServiceHost\" />
+    <WCFMetadataStorage Include="Service References\TanqueServiceHost\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ProdutoServiceHost\ProdutoService.disco" />
@@ -102,6 +155,51 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\ProdutoServiceHost\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ClienteServiceHost\ClienteService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ClienteServiceHost\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ClienteServiceHost\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ClienteServiceHost\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BombaServiceHost\BombaService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BombaServiceHost\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BombaServiceHost\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\BombaServiceHost\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TanqueServiceHost\TanqueService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TanqueServiceHost\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TanqueServiceHost\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\TanqueServiceHost\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

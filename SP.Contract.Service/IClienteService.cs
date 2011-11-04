@@ -9,6 +9,8 @@ namespace SP.Contract.Service
         [OperationContract]
         Cliente Inserir();
         [OperationContract]
+        Cliente BuscarPeloCodigo(int codigo);
+        [OperationContract]
         Cliente BuscarPeloCartaoESenha(string cartao, string senha);
     }
 }

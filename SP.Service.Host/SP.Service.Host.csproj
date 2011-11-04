@@ -53,6 +53,8 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BombaService.svc" />
+    <Content Include="ClienteService.svc" />
     <Content Include="ProdutoService.svc" />
     <Content Include="TanqueService.svc" />
     <Content Include="Web.config" />

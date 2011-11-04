@@ -18,6 +18,9 @@ namespace SP.Service.ProdutoServiceHost {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProdutoService/Inserir", ReplyAction="http://tempuri.org/IProdutoService/InserirResponse")]
         SP.Contract.Data.Produto Inserir(SP.Contract.Data.Produto _produto);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProdutoService/BuscarPeloCodigo", ReplyAction="http://tempuri.org/IProdutoService/BuscarPeloCodigoResponse")]
+        SP.Contract.Data.Produto BuscarPeloCodigo(int codigo);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProdutoService/BuscarTodos", ReplyAction="http://tempuri.org/IProdutoService/BuscarTodosResponse")]
         SP.Contract.Data.Produto[] BuscarTodos();
         
@@ -54,6 +57,10 @@ namespace SP.Service.ProdutoServiceHost {
         
         public SP.Contract.Data.Produto Inserir(SP.Contract.Data.Produto _produto) {
             return base.Channel.Inserir(_produto);
+        }
+        
+        public SP.Contract.Data.Produto BuscarPeloCodigo(int codigo) {
+            return base.Channel.BuscarPeloCodigo(codigo);
         }
         
         public SP.Contract.Data.Produto[] BuscarTodos() {

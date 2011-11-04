@@ -30,7 +30,7 @@ namespace SP.Contract.Data
         public static SP.Entities.produto Translate(SP.Contract.Data.Produto from)
         {
             var to = new SP.Entities.produto();
-            to.Produto_ID = from.Produto_ID;
+            to.Produto_ID = from.codigo_produto;
             to.un = from.un;
             to.unSecundaria = from.unSecundaria;
             to.valor = from.valor;
@@ -43,7 +43,7 @@ namespace SP.Contract.Data
         public static SP.Contract.Data.Produto Translate(SP.Entities.produto from)
         {
             var to = new SP.Contract.Data.Produto();
-            to.Produto_ID = from.Produto_ID;
+            to.codigo_produto = from.Produto_ID;
             to.un = from.un;
             to.unSecundaria = from.unSecundaria;
             to.valor = from.valor;
@@ -58,13 +58,13 @@ namespace SP.Contract.Data
         public static SP.Entities.venda Translate(SP.Contract.Data.Venda from)
         {
             var to = new SP.Entities.venda();
-            to.Venda_ID = from.Venda_ID;
+            to.Venda_ID = from.codigo_venda;
             to.dataEmissao = from.dataEmissao;
             to.dataSaida = from.dataSaida;
             to.serie = from.serie;
             to.totalDesconto = from.totalDesconto;
-            to.Cliente_ID = from.Cliente_ID;
-            to.Usuário_ID = from.Usuário_ID;
+            to.Cliente_ID = from.codigo_cliente;
+            to.Usuário_ID = from.codigo_funcionario;
 
             return to;
         }
@@ -72,13 +72,13 @@ namespace SP.Contract.Data
         public static SP.Contract.Data.Venda Translate(SP.Entities.venda from)
         {
             var to = new SP.Contract.Data.Venda();
-            to.Venda_ID = from.Venda_ID;
+            to.codigo_venda = from.Venda_ID;
             to.dataEmissao = from.dataEmissao;
             to.dataSaida = from.dataSaida;
             to.serie = from.serie;
             to.totalDesconto = from.totalDesconto;
-            to.Cliente_ID = from.Cliente_ID;
-            to.Usuário_ID = from.Usuário_ID;
+            to.codigo_cliente = from.Cliente_ID;
+            to.codigo_funcionario = from.Usuário_ID;
 
             return to;
         }

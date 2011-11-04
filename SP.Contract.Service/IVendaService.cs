@@ -7,10 +7,10 @@ namespace SP.Contract.Service
     public interface IVendaService
     {
         [OperationContract]
-        Venda RealizarVendaCaixa(ItemVenda[] requestItens, Venda requestVenda);
+        Venda RealizarVendaCaixa(Venda requestVenda);
 
         [OperationContract]
-        Venda RealizarVendaBombaAutomatica(ItemVenda requestItem, Venda requestVenda);
+        Venda RealizarVendaBombaAutomatica(Venda requestVenda);
 
         [OperationContract]
         bool Cancelar();

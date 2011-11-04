@@ -27,5 +27,11 @@ namespace SP.Service
                 return ctx.tanque.AsEnumerable().Select(i => Translator.Translate(i)).ToArray();
             }
         }
+
+
+        public bool QtdeDisponivel(int codigo, int quantidade)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

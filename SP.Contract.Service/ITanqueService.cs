@@ -11,5 +11,8 @@ namespace SP.Contract.Service
 
         [OperationContract]
         Tanque[] BuscarTodos();
+
+        [OperationContract]
+        bool QtdeDisponivel(int numero_bomba, int quantidade);
     }
 }

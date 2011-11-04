@@ -15,6 +15,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="BuscarPeloCodigo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="codigo" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BuscarPeloCodigoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SP.Contract.Data" minOccurs="0" name="BuscarPeloCodigoResult" nillable="true" type="q3:Produto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="BuscarTodos">
     <xs:complexType>
       <xs:sequence />
@@ -23,14 +37,14 @@
   <xs:element name="BuscarTodosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SP.Contract.Data" minOccurs="0" name="BuscarTodosResult" nillable="true" type="q3:ArrayOfProduto" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SP.Contract.Data" minOccurs="0" name="BuscarTodosResult" nillable="true" type="q4:ArrayOfProduto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="QtdeDisponivel">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SP.Contract.Data" minOccurs="0" name="_produto" nillable="true" type="q4:Produto" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/SP.Contract.Data" minOccurs="0" name="_produto" nillable="true" type="q5:Produto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
